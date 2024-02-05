@@ -2,9 +2,7 @@ node {
     def app
 
     stage('Clone repository') {
-      
-
-        checkout scm
+        checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/ShubhamArora073/kubernetesmanifest.git']])
     }
 
     stage('Update GIT') {
